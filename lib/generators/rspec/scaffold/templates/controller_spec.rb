@@ -118,13 +118,13 @@ RSpec.describe <%= controller_class_name %>Controller, <%= type_metatag(:control
 
       it "assigns the requested <%= ns_file_name %> as @<%= ns_file_name %>" do
         <%= file_name %> = <%= class_name %>.create! valid_attributes
-        put :update, {:id => <%= file_name %>.to_param, :<%= ns_file_name %> => valid_attributes}, valid_session
+        put :update, {:id => <%= file_name %>.to_param, :<%= ns_file_name %> => new_attributes}, valid_session
         expect(assigns(:<%= ns_file_name %>)).to eq(<%= file_name %>)
       end
 
       it "redirects to the <%= ns_file_name %>" do
         <%= file_name %> = <%= class_name %>.create! valid_attributes
-        put :update, {:id => <%= file_name %>.to_param, :<%= ns_file_name %> => valid_attributes}, valid_session
+        put :update, {:id => <%= file_name %>.to_param, :<%= ns_file_name %> => new_attributes}, valid_session
         expect(response).to redirect_to(<%= file_name %>)
       end
     end
